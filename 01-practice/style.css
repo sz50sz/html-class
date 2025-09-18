@@ -51,6 +51,7 @@ header h1 {
 .mainvisual h2 {
     font-size: 18px;
     line-height: 1.6;
+    margin-bottom: 30px;
 }
 
 .mainvisual p {
@@ -144,4 +145,19 @@ footer small {
     margin: 90px 0 0;
 }
 
-@media(width>=640px) {}
+@media(width>=640px) {
+
+    /* article in discussion */
+
+    .discussion .article-group {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: 6%;
+    }
+
+
+
+    .discussion article:first-child {
+        border: none;
+    }
+}
