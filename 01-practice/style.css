@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+/* all */
+body {
+    font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+    color: #1E1E1E;
+}
+
+.inner {
+    width: 86.49%;
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* header */
+
+header {
+    padding: 40px 0;
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+
+/* mainvisual */
+
+.mainvisual {
+    background: url(./images/bg_main.png) no-repeat center center/cover;
+    padding: 240px 0 80px;
+}
+
+.main {
+    width: 343px;
+    background-color: #fff;
+    padding: 40px;
+}
+
+.mainvisual h2 {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.mainvisual p {
+    font-size: 36px;
+    font-weight: demibold;
+    line-height: 1.4;
+}
+
+/* discussion */
+
+.discussion {
+    margin: 100px 0;
+}
+
+.discussion h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.discussion h2::before {
+    content: "";
+    display: block;
+    background-color: #72C9F3;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto 25px;
+}
+
+.discussion h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    border-bottom: 1px solid #1E1E1E;
+    margin: 20px auto 0;
+}
+
+
+/* article in discussion */
+
+.discussion article {
+    padding: 50px 0;
+}
+
+.discussion article:first-child {
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.discussion article h3 {
+    margin: 20px 0;
+}
+
+.discussion .tag {
+    display: flex;
+    column-gap: 10px;
+}
+
+.discussion .tag li {
+    background-color: #F5F5F5;
+    padding: 6px 10px;
+}
+
+/* footer */
+
+footer {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    padding: 100px;
+}
+
+footer .category ul {
+    width: 370px;
+    margin: 0 auto;
+}
+
+footer .category ul div {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: left;
+    column-gap: 50px;
+    border-bottom: 1px solid #fff;
+    padding: 20px;
+    margin: 20px 0 0;
+}
+
+footer small {
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    margin: 90px 0 0;
+}
+
+@media(width>=640px) {}
