@@ -8,8 +8,8 @@ $color-tips: #bbb;
 $font-family-base: Helvetica, Arial, sans-serif;
 
 @mixin inner($mw: 800px, $w: 88%) {
-    width: 88%;
-    max-width: 800px;
+    width: $w;
+    max-width: $mw;
     margin-right: auto;
     margin-left: auto;
 }
@@ -89,6 +89,12 @@ img {
 
     &__title {
         @include subtitle();
+
+        &--border {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $color-tips;
+        }
     }
 }
 
@@ -155,6 +161,12 @@ img {
         @include text-main();
     }
 
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 60px;
+    }
+
 }
 
 // trending
@@ -168,5 +180,61 @@ img {
 
     &__title {
         @include text-main();
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px percentage(math.div(40, 800));
+    }
+
+    &__item {
+        .btn {
+            margin-left: auto;
+        }
+    }
+}
+
+
+// about.html----------------------
+
+// blog
+.blog {
+    padding: 0 0 60px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__list {
+        display: grid;
+        row-gap: 40px;
+    }
+
+    &__item {
+        .btn {
+            margin-left: auto;
+        }
+
+    }
+}
+
+.discovery {
+
+    padding: 60px 0;
+    background-color: $color-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include text-main();
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px percentage(math.div(40, 800));
     }
 }

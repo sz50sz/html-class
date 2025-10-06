@@ -52,6 +52,11 @@ img {
   font-weight: bold;
   line-height: 1.2777777778;
 }
+.post__title--border {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bbb;
+}
 
 .card {
   background-color: #fff;
@@ -115,6 +120,11 @@ img {
   border-left: 10px solid #fa6980;
   margin-bottom: 30px;
 }
+.news__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px;
+}
 
 .trending {
   padding: 60px 0;
@@ -135,5 +145,56 @@ img {
   padding-left: 10px;
   border-left: 10px solid #fa6980;
   margin-bottom: 30px;
+}
+.trending__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 5%;
+}
+.trending__item .btn {
+  margin-left: auto;
+}
+
+.blog {
+  padding: 0 0 60px;
+}
+.blog__inner {
+  width: 88%;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.blog__list {
+  display: grid;
+  row-gap: 40px;
+}
+.blog__item .btn {
+  margin-left: auto;
+}
+
+.discovery {
+  padding: 60px 0;
+  background-color: #F6F6F6;
+}
+.discovery__inner {
+  width: 88%;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.discovery__title {
+  color: #202124;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.2916666667;
+  text-transform: uppercase;
+  padding-left: 10px;
+  border-left: 10px solid #fa6980;
+  margin-bottom: 30px;
+}
+.discovery__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 5%;
 }
 /*# sourceMappingURL=style.css.map */
