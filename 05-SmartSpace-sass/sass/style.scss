@@ -1,0 +1,30 @@
+@use 'sass:math';
+
+$color-text: #31353B;
+$color-main: #FF9900;
+$color-accent: #F85A47;
+$color-heading: #000;
+$color-bg: #DBFFFF;
+
+$font-family-base: Helvetica, Arial, sans-serif;
+
+@mixin inner($mw: 1000px, $w: 88%) {
+    max-width: $mw;
+    width: $w;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: 15px;
+    color: $color-text;
+    line-height: math.div(26, 15);
+    letter-spacing: #{math.div(20,1000)}em;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
