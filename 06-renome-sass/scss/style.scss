@@ -2,6 +2,8 @@
 
 $bs: (
     "desktop": 640px,
+    "br":500px,
+    "table":815px
 );
 
 $color-text: #404040;
@@ -23,6 +25,15 @@ $font-famly-base: "游ゴシック", "Yu Gothic", Helvetica, Arial, sans-serif;
     margin-right: auto;
 }
 
+@mixin title-main() {
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: math.div(27, 18);
+}
+
 body {
     color: $color-text;
     font-size: 14px;
@@ -38,7 +49,7 @@ img {
 
 /* common
 -------------------*/
-
+/* header */
 .header {
     padding: 40px 0;
     text-align: center;
@@ -48,6 +59,7 @@ img {
     }
 }
 
+/* footer */
 .footer {
     padding: 40px 0;
     background-color: $color-bg;
@@ -56,7 +68,6 @@ img {
     &__inner {
         @include inner();
         display: grid;
-        grid-auto-flow: row;
         row-gap: 15px;
 
         @include mq() {
@@ -74,8 +85,104 @@ img {
         font-size: 12px;
         line-height: math.div(18, 12);
     }
-
 }
 
 /* index.html
 -------------------*/
+/* mainvisual */
+.mainvisual {
+    margin-bottom: 100px;
+    padding: 350px 0 120px;
+    background: url(../images/pic_main.png) no-repeat center/cover;
+    color: #fff;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        margin-bottom: 40px;
+        font-size: 42px;
+        font-weight: bold;
+        line-height: math.div(60, 42);
+        word-break: keep-all;
+    }
+
+    &__lead {
+        font-size: 18px;
+        line-height: math.div(22, 18);
+    }
+}
+
+/* concept */
+.concept {
+    padding-bottom: 100px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__text {
+        display: grid;
+        row-gap: 40px;
+        word-break: keep-all;
+        text-align: center;
+    }
+}
+
+.open {
+    padding-bottom: 100px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+    &__table {
+        overflow-x: auto;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        th {
+            background-color: $color-bg;
+            font-weight: bold;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            border: 1px solid #707070;
+            text-align: center;
+        }
+    }
+
+    &__tips {
+        @include mq(table) {
+            display: none;
+        }
+    }
+}
+
+.recruit {
+    padding-bottom: 100px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title-main();
+    }
+
+}
