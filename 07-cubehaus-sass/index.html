@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUBE HAUS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__logo"><a href="index.html">CUBE HAUS</a></h1>
+            <nav class="header__navi navi">
+                <ul class="navi__list">
+                    <li class="navi__item onpage">COMPANY</li>
+                    <li class="navi__item">MISSION</li>
+                    <li class="navi__item">CONTACT</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <section class="mainvisual">
+            <div class="mainvisual__inner">
+                <picture class="mainvisual__pic">
+                    <source media="(width>=640px)" srcset="./images/pic_main_lg.png">
+                    <source media="(width<640px)" srcset="./images/pic_main_sm.png">
+                    <img src="./images/pic_main_lg.png" alt="mainvisual">
+                </picture>
+            </div>
+        </section>
+        <section class="philosophy">
+            <div class="philosophy__inner">
+                <h2 class="philosophy__title">経営理念</h2>
+                <p class="philosophy__text">日々の喧騒から解放される静かな空間で、
+                    自分らしい豊かな時間をお過ごしください。
+                    私たちが大切にしているのは、暮らしの本質を見つめ、
+                    家族との対話に心から集中できる、
+                    洗練された「器」としての家をご提供することです。</p>
+                <div class="space"></div>
+                <p class="philosophy__text">優れたデザインは、何気ない日常を
+                    より豊かで特別なものに変える力があります。
+                    皆様の人生という物語の素敵な舞台となれることを、
+                    心より願っております。</p>
+            </div>
+        </section>
+        <section class="works">
+            <div class="works__inner">
+                <h2 class="works__title">制作実績</h2>
+                <div class="works__exam">
+                    <article class="post new">
+                        <div class="post__pic"><img src="./images/pic_works01.png" alt=""></div>
+                        <h3 class="post__title">光と風の抜ける家</h3>
+                        <p class="post__text">白を基調としたミニマルな空間。大きな窓から光が差し込む、開放感あふれる住まい。</p>
+                    </article>
+                    <article class=" post">
+                        <div class="post__pic"><img src="./images/pic_works02.png" alt=""></div>
+                        <h3 class="post__title">空と繋がるコートハウス</h3>
+                        <p class="post__text">プライバシーを守りながら、空を独り占めできる中庭。家族の時間が豊かになる設計。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="voice">
+            <div class="voice__inner">
+                <h2 class="voice__title">お客様の声</h2>
+                <div class="voice__exam">
+                    <article class=" card">
+                        <p class="card__text">無駄のない洗練されたデザインに惹かれ、CUBE
+                            HAUSさんにお願いしました。見た目の美しさだけでなく、生活動線が考え抜かれていて本当に快適です。新しい家で過ごす家族の時間が増え、何気ない毎日がとても豊かになりました。</p>
+                        <dl class="customer">
+                            <img src="./images/pic_customer01.png" alt="鈴木雄大様の写真" class="customer__pic">
+                            <div class="customer__prof">
+                                <dt class="customer__company">株式会社クオリアーク</dt>
+                                <dd class="customer__name">鈴木 雄大 様</dd>
+                            </div>
+                        </dl>
+                    </article>
+                    <article class=" card">
+                        <p class="card__text">
+                            事務所の移転に伴い、理念を体現する建物を探していました。こちらの要望を深く理解し、想像以上の空間を提案してくれました。機能的で美しい仕事場は、社員の創造性を刺激し、会社の新たな魅力になっています。
+                        </p>
+                        <dl class="customer">
+                            <img src="./images/pic_customer02.png" alt="中村美咲様の写真" class="customer__pic">
+                            <div class="customer__prof">
+                                <dt class="customer__company">株式会社フォルネクサス</dt>
+                                <dd class="customer__name">中村 美咲 様</dd>
+                            </div>
+                        </dl>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__inner">
+            <small class="footer__copy">© 2007 CUBE HAUS INC.</small>
+        </div>
+    </footer>
+</body>
+
+</html>
