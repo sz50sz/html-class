@@ -1,0 +1,250 @@
+@use "sass:math";
+
+// =================================================================
+//  Variables
+// =================================================================
+
+// --- Spacing ---
+$space-xs: 0.25rem; // 4px
+$space-s: 0.5rem; // 8px
+$space-m: 1rem; // 16px
+$space-l: 1.5rem; // 24px
+$space-xl: 2rem; // 32px
+$space-xxl: 2.5rem; // 40px
+$space-xxxl: 3rem; // 48px
+
+// --- Colors ---
+$color-text: #5A5A5A;
+$color-base: #fff;
+$color-point: #ED145B;
+$color-accent: #EDAA14;
+$color-bg: #2B2B2B;
+
+// --- Typography ---
+$font-size-base: 16;
+$font-family-gothic: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+$font-family-mincho: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+
+// --- Breakpoints ---
+$breakpoints: (
+    "tablet": 768px,
+    "desktop": 900px
+);
+
+
+// =================================================================
+//  Functions
+// =================================================================
+
+// pxをremに変換する
+// @param {number} $px-value - px値
+// @return {string} - rem値
+@function rem($px-value) {
+    @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+// XDのトラッキング値をemに変換する
+// @param {number} $xd-value - XDのトラッキング値
+// @return {string} - em値
+@function ls($xd-value) {
+    @return #{math.div($xd-value, 1000)}em;
+}
+
+
+// =================================================================
+//  Mixins
+// =================================================================
+
+// メディアクエリ (モバイルファースト)
+// @param {string} $breakpoint - $breakpointsのキー
+@mixin mq($breakpoint: desktop) {
+    @media (width >=map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+// インナー幅の指定
+// @param {number} $mw - max-width
+// @param {number} $w  - width
+@mixin inner($mw: 900px, $w: percentage(math.div(560, 640))) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin title {
+    font-size: rem(32);
+    padding-bottom: $space-xxl;
+    line-height: math.div(38, 32);
+    font-weight: bold;
+    color: $color-bg;
+    text-align: center;
+}
+
+//common-----------------------------
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: rem(14);
+    line-height: math.div(24, 14);
+    letter-spacing: ls(25);
+    color: $color-text;
+}
+
+img {
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+
+.header {
+    background-color: rgba($color: $color-bg, $alpha: 0.8);
+    color: $color-base;
+    padding: rem(40) 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navi {
+        &__list {
+            display: grid;
+            grid-auto-flow: column;
+            align-items: center;
+            column-gap: $space-xl;
+            font-weight: bold;
+        }
+
+        &__item:hover {
+            color: $color-point;
+            transition: 0.3s;
+        }
+    }
+}
+
+.footer {
+    padding: rem(40) 0 rem(140);
+    background-color: $color-bg;
+    color: $color-base;
+
+    &__inner {
+        @include inner();
+    }
+}
+
+.point {
+    color: $color-point;
+}
+
+.btn {
+    display: block;
+    background-color: $color-point;
+    color: $color-base;
+    width: 200px;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px 0;
+
+    &:hover {
+        background-color: $color-accent;
+        transition: 0.3s;
+    }
+}
+
+.news {
+    &__title {
+        padding: $space-l 0 $space-m;
+        color: $color-bg;
+        font-weight: bold;
+        border-bottom: 1px solid $color-text ;
+    }
+
+    &__text {
+        padding: $space-m 0 $space-xxl;
+    }
+
+    .btn {
+        background-color: $color-accent;
+
+        &:hover {
+            background-color: $color-point;
+        }
+    }
+}
+
+
+
+//index.html------------------------
+
+//mainvisual-=-------------------
+
+.mainvisual {
+    padding: rem(240) 0 rem(140);
+    background: url(../images/bg_mainvisual.png) no-repeat center center/cover;
+    color: $color-base;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        font-size: rem(46);
+        padding-bottom: $space-xxl;
+        line-height: math.div(55, 46);
+        font-weight: bold;
+    }
+
+    &__text {
+        padding-bottom: 48px;
+
+        p {
+            padding-bottom: $space-l;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    @include mq() {
+        text-align: center;
+
+        .btn {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
+
+//updates-----------------------------
+
+.updates {
+    padding: 120px 0;
+
+    &__inner {
+        @include inner;
+    }
+
+    &__title {
+        @include title();
+    }
+
+    &__article {
+        display: grid;
+        gap: rem(60);
+
+        @include mq {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+
+}
